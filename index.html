@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial.ly - Answers to Life's Most Financial Questions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-translate-customization" content="939b99bd2e72e1ee-4b6b5f9b15f41d72-g83e1b33b4755c98b-22">
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <link href="css/sendmoney.css" rel="stylesheet">
+    <link href="css/debt.css" rel="stylesheet">
+</head>
+<body>
+<div class="row-fluid">
+    <div class="span2 offset7" style="margin-left: 57%">
+        <div id="google_translate_element"></div>
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                    pageLanguage: 'en',
+                    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+                }, 'google_translate_element');
+            }
+        </script>
+        <script type="text/javascript"
+                src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span4 hidden-phone"></div>
+    <div class="span4">
+        <img src="img/logo.png" id="logo">
+    </div>
+    <div class="span4 hidden-phone"></div>
+</div>
+<div class="row-fluid">
+    <div class="span4 offset4">
+        <input id="search" type="text" data-provide="typeahead" autocomplete="off" placeholder="I need to...">
+    </div>
+</div>
+<div class="row-fluid">
+    <div class="span4 hidden-phone hidden-tablet"></div>
+    <div class="span4" id="loader">
+        <div id="debtPage" style="display:none;">
+            <div class="btn-group" id="selectDebt">
+                <div class="row-fluid">
+                <button class="btn" id="inDebt span6" style="margin-right: 10px; font-size: 12px;" onclick="$('#highDebtPage').hide();
+        $('#lowDebtPage').show();">Under $100,000 of debt</button>
+                    <br class="visible-phone">
+                <button class="btn" id="inDebtHell span6" style="font-size: 12px;" onclick="$('#lowDebtPage').hide();
+        $('#highDebtPage').show();">Over $100,000 of debt</button>
+                </div>
+            </div>
+            <div class="responseBox">
+                <hr>
+                <div id="highDebtPage" style="display: none;">
+                    <div class="row-fluid">
+                    <h2>Go See a Debt Professional</h2>
+                    <p>Unfortunately, dealing with debts this large usually requires individualized planning for your specific situation. The best course of action would be to see a firm who specializes in this.</p>
+                    <br>
+                        <p>Sorry</p>
+                    </div>
+                    </div>
+                <div id="lowDebtPage" style="display: none;">
+                    <div class="row-fluid">
+                        <h2>Step 1</h2>
+
+                        <p>Identify where your <a href="#" id="tooltip8" data-toggle="tooltip"
+                                                  title="The money you make from your job">income</a> is going</p>
+
+                        <br>
+                        <p>By recording and categorizing all of your purchases over the past month, you'll be able to see some of the patterns in your spending. This is a sample table with the most common catagories.</p>
+                        <br>
+                        <table class="table table-hover">
+                            <tr>
+                                <td><a href="#" id="tooltip9" data-toggle="tooltip"
+                                       title="Includes movies, shows, or anything purchased primarily for your own enjoyment">Entertainment</a>
+                                </td>
+                                <td>$5000</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="tooltip10" data-toggle="tooltip"
+                                       title="Amount due every month for the renting of an apartment or house">Rent</a>
+                                </td>
+                                <td>$1200</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="tooltip11" data-toggle="tooltip"
+                                       title="Usually involves loan payments, gas, and maintenance for your vehicle. May also include ticket costs for public transportation">Transportation</a>
+                                </td>
+                                <td>$800</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="tooltip12" data-toggle="tooltip"
+                                       title="Amount spent at grocery stores, as well as the amount spent at restaurants and fast food locations">Food</a>
+                                </td>
+                                <td>$500</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="tooltip13" data-toggle="tooltip"
+                                       title="Includes water, heating, electricity, and internet/cable bills">Utilities</a>
+                                </td>
+                                <td>$300</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="tooltip14" data-toggle="tooltip"
+                                       title="Personal hygiene products, as well as basic medical supplies and a gym membership">Personal
+                                    Health</a></td>
+                                <td>$50</td>
+                            </tr>
+                            <tr>
+                                <td><a href="#" id="tooltip15" data-toggle="tooltip"
+                                       title="Payments for recurring debt, like student loan payments or other long term loans">Student
+                                    Debt</a></td>
+                                <td>$150</td>
+                            </tr>
+                        </table>
+
+                        <br>
+                        <p>It's pretty apparent here that there's quite a few problems with this spending map. Let's see a better way to lay this out.</p>
+                    </div>
+                    <div class="row-fluid">
+                        <hr>
+                        <h2>Step 2</h2>
+
+                        <p>Lay out where your <a href="#" id="tooltip16" data-toggle="tooltip"
+                                                 title="Money borrow-fluided and owed to another person or company">debt</a>
+                            is and make a <a href="#" id="tooltip7" data-toggle="tooltip"
+                                             title="A tool used to plan for where your money will be spent">budget</a>
+                        </p>
+                        <p> <a href="#" id="tooltip17" data-toggle="tooltip"
+                               title="These percentages are taken from Dave Ramsey's 'The Total Money Makeover' and are applied to your monthly income to give rough budget suggestions">How was this table generated?</a></p>
+                        <br>
+                        <form id="incomeInput">
+                            <p>For an example budget, type your monthly income here</p>
+                            <input type="text" class="span5" id="income" placeholder="monthly income">
+                        </form>
+                        <table class="table table-hover">
+                            <tr>
+                                <td>Savings (10%)</td>
+                                <td id="savingstable">$5000</td>
+                            </tr>
+                            <tr>
+                                <td>Housing (30%)</td>
+                                <td id="housingtable">$1200</td>
+                            </tr>
+                            <tr>
+                                <td>Utilities (5%)</td>
+                                <td id="utilitiestable">$800</td>
+                            </tr>
+                            <tr>
+                                <td>Transportation (10%)</td>
+                                <td id="transportationtable">$500</td>
+                            </tr>
+                            <tr>
+                                <td>Food (10%)</td>
+                                <td id="foodtable">$300</td>
+                            </tr>
+                            <tr>
+                                <td>Clothing (3%)</td>
+                                <td id="clothingtable">$50</td>
+                            </tr>
+                            <tr>
+                                <td>Medical/Health (5%)</td>
+                                <td id="medicaltable">$150</td>
+                            </tr>
+                            <tr>
+                                <td>Personal Spending (5%)</td>
+                                <td id="personaltable">$400</td>
+                            </tr>
+                            <tr>
+                                <td>Recreation (5%)</td>
+                                <td id="recreationtable">$300</td>
+                            </tr>
+                            <tr>
+                                <td>Debt Payback (27%)</td>
+                                <td id="debttable">$1000</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <p>Remember to always pay back debt as soon as possible, starting with the highest <a href="#" id="tooltip20" data-toggle="tooltip" title="Money due for the privilege of borrow-fluiding someone else's money, usually payed as a percentage of the amount of money borrow-fluided.">interest</a> debt and moving down.</p>
+                    </div>
+                    <div class="row-fluid">
+                        <hr>
+                        <h2>Step 3</h2>
+
+                        Although a budget is a good place to start, a <a href="#" id="tooltip18" data-toggle="tooltip" title="Application or tool used to track daily spending and income to help reach budgeting goals">money management app</a> to keep track of your <a href="#" id="tooltip19" data-toggle="tooltip" title="All things regarding your money">finances</a> will help you go even farther</p>
+
+                        <p>These applications are highly rated, and will keep you on track to your debt-free goals</p>
+                        <hr>
+                        <div class="row-fluid">
+                            <a href="https://www.mint.com/"><img id="mint" src="img/mint.png"></a>
+                            <a href="https://www.billguard.com/"><img id="billguard" src="img/billguard.png"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="sendmoneyPage" style="display:none;">
+            <div class="row-fluid" style="margin-left: 13px;">
+                <div class="btn-group" id="selectNeeds">
+                    <div class="visible-phone span4"></div>
+                    <div class="row-fluid">
+                        <div class="span4">
+                        <button class="btn buttonz" id="cheapButton">Send Money Cheaply</button>
+                        </div>
+                        <br class="visible-phone">
+                        <div class="span4">
+                        <button class="btn buttonz" id="fastButton">Send Money Fast</button>
+                            </div>
+                        <br class="visible-phone">
+                        <div class="span4">
+                        <button class="btn buttonz" id="internationalButton">Send Internationally</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="responseBox">
+                <hr>
+                <div class="row-fluid" style="display: none" id="moneygram">
+                    <h2 class="answerTitle">Use MoneyGram or Western Union</h2>
+
+                    <p>MoneyGram and Western Union are companies that allow you to send and receive money via through a
+                        local office.</p>
+                    <hr>
+                    <h3 class="pros">Pros:</h3>
+                    <ul>
+                        <li><a href="#" id="tooltip4" data-toggle="tooltip" title="A fancy word for money">Funds</a> are
+                            usually available within 10 minutes of deposit
+                        </li>
+                    </ul>
+                    <hr>
+                    <h3 class="cons">Cons:</h3>
+                    <ul>
+                        <li>Large fees when transferring to other countries</li>
+                        <li>Non-competitive <a href="#" id="tooltip1" data-toggle="tooltip"
+                                               title="Value of type of money to another (USD to Peso)">exchange
+                            rates</a></li>
+                    </ul>
+                </div>
+                <div class="row-fluid" style="display: none;" id="check">
+                    <h2 class="answerTitle">Use a Check</h2>
+
+                    <p class="answerDescription">Personal checks are used to draw money from a bank account. Checks are
+                        available from most every bank.</p>
+                    <hr>
+                    <h3 class="pros">Pros:</h3>
+                    <ul>
+                        <li>No fees when used within the United States</li>
+                        <li><a href="#" id="tooltip3" data-toggle="tooltip" title="A fancy word for money">Funds</a> are
+                            available within 5 days or less
+                        </li>
+                        <li>Widely used and available</li>
+                    </ul>
+                    <hr>
+                    <h3 class="cons">Cons:</h3>
+                    <ul>
+                        <li>Not accepted by everyone (<a href="#" id="tooltip2" data-toggle="tooltip"
+                                                         title="Checks can bounce, or 'not go through', when there is not enough money in the bank account. Also known as 'hot checks'.">why?</a>)
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="row-fluid" style="display: none;" id="moneyorder">
+                    <h2 class="answerTitle">Money Order</h2>
+
+                    <p>Money Orders are pre-purchased vouchers for a set amount of money or foreign currency</p>
+                    <hr>
+                    <h3 class="pros">Pros:</h3>
+                    <ul>
+                        <li>Cheapest way to send money (about $10 dollars)</li>
+                        <li>Can be purchased at a number of locations (Post Office, UPS, and more)</li>
+                        <li>Easy to exchange for cash at numerous locations</li>
+                    </ul>
+                    <hr>
+                    <h3 class="cons">Cons:</h3>
+                    <ul>
+                        <li>Not accepted in all countries (<a href="#" id="tooltip5" data-toggle="tooltip" title="
+                        Albania
+                        Anguilla
+                        Antigua and Barbuda
+                        Bahamas
+                        Barbados
+                        Belize
+                        Bolivia
+                        British Virgin Islands
+                        Canada
+                        Cape Verde
+                        Dominica
+                        Dominican Republic
+                        Ecuador
+                        El Salvador ($500)
+                        Grenada
+                        Guinea2
+                        Guyana ($500)
+                        Honduras
+                        Jamaica
+                        Japan
+                        Mali
+                        Mexico
+                        Montserrat
+                        Peru
+                        Saint Christopher and Nevis
+                        Saint Lucia
+                        Saint Vincent and the Grenadines
+                        Sierra Leone
+                        Trinidad and Tobago">
+                            which ones?</a>)
+                        </li>
+                        <li>Requires valid <a href="#" id="tooltip6" data-toggle="tooltip"
+                                              title="Documentation given to you by the government with your name and photo (Ex: driver's license, passport, etc)">identification
+                            to cash</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="http://code.jquery.com/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+    $('#search').typeahead({
+        source: ["Send money back home",
+            "Get a bank account",
+            "Get out of debt",
+            "Get money now",
+            "Save for an emergency",
+            "Start investing"],
+        updater: function (item) {
+            updatePage(item);
+            return item;
+        }
+    });
+</script>
+<script>
+    $('#tooltip7').tooltip();
+    $('#tooltip8').tooltip();
+    $('#tooltip9').tooltip();
+    $("#tooltip10").tooltip();
+    $("#tooltip11").tooltip();
+    $('#tooltip12').tooltip();
+    $("#tooltip13").tooltip();
+    $('#tooltip14').tooltip();
+    $('#tooltip15').tooltip();
+    $('#tooltip16').tooltip();
+    $("#tooltip17").tooltip();
+    $('#tooltip18').tooltip();
+    $("#tooltip19").tooltip();
+    $("#tooltip20").tooltip();
+    setInterval(function() {
+        var income = $('#income').val();
+        if (income !== "") {
+            $('#savingstable').text("$" + 0.1*income);
+            $('#housingtable').text("$" + 0.3*income);
+            $('#utilitiestable').text("$" + 0.1*income);
+            $('#transportationtable').text("$" + 0.1*income);
+            $('#foodtable').text("$" + 0.1*income);
+            $('#clothingtable').text("$" + 0.03*income);
+            $('#medicaltable').text("$" + 0.05*income);
+            $('#personaltable').text("$" + 0.05*income);
+            $('#recreationtable').text("$" + 0.05*income);
+            $('#debttable').text("$" + 0.27*income);
+        }
+    }, 100);
+</script>
+<script>
+    $('#tooltip1').tooltip();
+    $('#tooltip2').tooltip();
+    $('#tooltip3').tooltip();
+    $('#tooltip4').tooltip();
+    $('#tooltip5').tooltip();
+    $('#tooltip6').tooltip();
+    $('#internationalButton').on('click', function () {
+        $('#check').hide();
+        $('#moneygram').hide();
+        $('#moneyorder').show();
+    });
+    $('#fastButton').on('click', function () {
+        $('#check').hide();
+        $('#moneyorder').hide();
+        $('#moneygram').show();
+
+    });
+    $('#cheapButton').on('click', function () {
+        $('#moneygram').hide();
+        $('#moneyorder').hide();
+        $('#check').show();
+
+    })
+</script>
+</body>
+</html>
